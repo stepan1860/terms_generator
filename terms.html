@@ -10,25 +10,32 @@
 			background: #62D0EA;
 			transition: 0.3s;
 		}
+		html>body.dark{
+			background: #62D0EA;
+		}
+		html>body h1{
+			font-size: 30px;
+		}
+
 		section{
 			background: #fff;
 			transition: 0.3s;
 		}
 
 		.dark section{
-			background: #36444A;
+			background: #252525;
 			color: #fff;
 		}
 
 		.wrapper input, textarea{
 			width: 100%;
-			display: block;
-			margin-bottom: 15px;
-			border-radius: 5px;
-			border: none;
-			padding: 10px;
-			font-size: 18px;
-			font-family: Arial, sans-serif;
+		    display: block;
+		    margin-bottom: 15px;
+		    border-radius: 5px;
+		    border: none;
+		    padding: 10px;
+		    box-sizing: border-box;
+		    font-size: 18px;
 		}
 		button{
 			margin: 10px auto 20px;
@@ -66,7 +73,6 @@
 			color: #F4CA16;
 			font-weight: bold;
 			font-size: 18px;
-			font-family: Arial, sans-serif;
 		}
 		label::before {
 			content: '';
@@ -80,18 +86,42 @@
 			border: 2px solid #F4CA16;
 		}
 		body.dark label{
-			color: #36444A;
+			color: #252525;
 		}
 		body.dark label::before{
-			border: 2px solid #36444A;
+			border: 2px solid #252525;
 		}
 		input[type="checkbox"]:checked + label::before {
 			content: '';
-			background: #36444A;
+			background: #252525;
 			background-size: 100%;
 			/*background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0MjYuNjY3IDQyNi42NjciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQyNi42NjcgNDI2LjY2NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxwYXRoIHN0eWxlPSJmaWxsOiM2QUMyNTk7IiBkPSJNMjEzLjMzMywwQzk1LjUxOCwwLDAsOTUuNTE0LDAsMjEzLjMzM3M5NS41MTgsMjEzLjMzMywyMTMuMzMzLDIxMy4zMzMgIGMxMTcuODI4LDAsMjEzLjMzMy05NS41MTQsMjEzLjMzMy0yMTMuMzMzUzMzMS4xNTcsMCwyMTMuMzMzLDB6IE0xNzQuMTk5LDMyMi45MThsLTkzLjkzNS05My45MzFsMzEuMzA5LTMxLjMwOWw2Mi42MjYsNjIuNjIyICBsMTQwLjg5NC0xNDAuODk4bDMxLjMwOSwzMS4zMDlMMTc0LjE5OSwzMjIuOTE4eiIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K)*/
 		}
 		/*END Dark Theme*/
+
+		@media screen  and (max-width: 415px) {
+			.wrapper{
+				width: 90%;
+				margin-bottom: 15px;
+			}
+			html>body h1{
+				font-size: 4.5vw;
+			}
+			button{
+				padding: 10px 7vw;
+			}
+		}
+		@media screen  and (max-width: 360px) {
+			.wrapper{
+				width: 90%;
+			}
+			html>body h1{
+				font-size: 4.5vw;
+			}
+			button{
+				padding: 10px 5vw;
+			}
+		}
 
 		/*styles for copy ↓↓↓*/
 		body,html{
@@ -99,65 +129,129 @@
 			margin: 0;
 		}
 		body{
-			color: #000;
-			background: none;
-			padding: 10px;
+			color: #252525;
+			background: #fff;
 			margin: 0;
 			box-sizing: border-box;
+			text-align: justify;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		body.dark{
+			color: #fff;
+			background: #252525;
 		}
 		.container{
 			width: 100%;
 			max-width: 600px;
 			margin: 0 auto;
+			padding: 20px;
+			box-sizing: border-box;
 		}
-		h1{
-			padding-top: 30px;
-			padding-bottom: 30px;
+		h1{	
+			padding-top: 0.7em;
+			padding-bottom: 0.7em;
+			font-size: 18px;
+			font-weight: 700;
+			text-align: center;
+			/*padding-top: 30px;
+			padding-bottom: 30px;*/
 		}
 		h1,h2{
 			font-weight: bold;
-			display: block;
-			margin: 0 auto;
 		}
-		.container h1{
+		h1{
 			font-size: 25px;
 		}
-		.container h2{
-			font-size: 20px;
+		h2{
+			margin-top: 0.7em;
+			margin-bottom: 0.7em;
+			font-weight: 700;
+			font-size: 16px;
+			text-align: center;
 
 		}
-		.container p{
-			display: block;
+		p{
+			margin-top: 0.7em;
+			margin-bottom: 0.7em;
 			font-size: 14px;
 		}
-		.container p.ul{
-			margin-left: 15px;
+		p.ul{
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+			margin-left: 30px;
+			text-align: left;
 		}
 		a{
 			text-decoration: none;
 		}
-		.container .wp-block-button a{
-			color: #536872;
-		    display: inline-block;
-		    margin: auto;
-		    text-align: center;
-		    padding: 15px 35px;
-		    border-radius: 10px;
-		    background: rgba(255,255,255, 0.7);
-		    border: 2px solid gray;
-		    width: 20%;
+		.wp-block-button a{
+			display: inline-block;
+			margin: 0 auto;
+			padding: 5px 25px;
+			font-size: 18px;
+			line-height: 1.5em;
+			text-align: center;
+			color: #fff;
+			text-transform: uppercase;
+			text-decoration: none;
+			letter-spacing: 1px;
+			background-color: #252525;
+			border-radius: 5px;
 		}
+
+		.dark .wp-block-button a{
+			color: #252525;
+		}
+
+		.wp-block-button a:hover {
+		  background-color: #3a3a3a;
+		}
+
+		.wp-block-button a:active {
+		  background-color: #212121;
+		}
+
+		.dark .wp-block-button a:hover {
+		  background-color: #D3D3D3;
+		}
+
+		.dark .wp-block-button a:active {
+		  background-color: #D3D3D3;
+		}
+
 		.wp-block-button{
 			text-align: center;
 		}
-	</style>
 
+
+		@media (min-width: 768px) {
+		  .termz__title {
+		    font-size: 20px;
+		  }
+
+		  .termz__subtitle {
+		    font-size: 18px;
+		  }
+
+		  .termz__text {
+		    font-size: 16px;
+		  }
+
+		  .termz__text--inner {
+		    font-size: 16px;
+		  }
+
+		  .termz__link {
+		    margin-top: 1em;
+		  }
+		}
+	</style>
 
 </head>
 <body>
 	<header>
 		<div class="wrapper">
-			<h1 style="font-size: 30px">Авто генерація термзів WORD → HTML</h1>
+			<h1 class="main_title">Авто генерація термзів WORD → HTML</h1>
 			<input class="input" type="text" placeholder="Title page">
 			<textarea rows="10" cols="20" class="input" type="text" placeholder="Text"></textarea>
 			<input class="input" type="text" placeholder="Button text">
