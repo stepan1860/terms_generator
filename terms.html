@@ -6,8 +6,7 @@
 	<title>Terms Generator</title>
 
 	<style>
-		
-		header{
+		body{
 			background: #62D0EA;
 		}
 		
@@ -36,15 +35,12 @@
 			cursor: pointer;
 			box-shadow: none;
 		}
-		button#button_copy{
 
-		}
 		button:hover{
 			-webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 			-moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 			box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 		}
-		.container,
 		.wrapper{
 			width: 100%;
 			max-width: 600px;
@@ -56,12 +52,23 @@
 			padding: 0;
 			margin: 0;
 		}
-
+		body{
+			color: #000;
+			background: none;
+			padding: 10px;
+			margin: 0;
+			box-sizing: border-box;
+		}
+		.container{
+			width: 100%;
+			max-width: 600px;
+			margin: 0 auto;
+		}
 		h1{
 			padding-top: 30px;
 			padding-bottom: 30px;
 		}
-		h1,h2,h3{
+		h1,h2{
 			font-weight: bold;
 			display: block;
 			margin: 0 auto;
@@ -73,9 +80,6 @@
 			font-size: 20px;
 
 		}
-		.container h3{
-			font-size: 15px;
-		}
 		.container p{
 			display: block;
 			font-size: 14px;
@@ -83,7 +87,10 @@
 		.container p.ul{
 			margin-left: 15px;
 		}
-		.container a{
+		a{
+			text-decoration: none;
+		}
+		.container .wp-block-button a{
 			color: #536872;
 		    display: inline-block;
 		    margin: auto;
@@ -92,13 +99,10 @@
 		    border-radius: 10px;
 		    background: rgba(255,255,255, 0.7);
 		    width: 20%;
-
 		}
 		.wp-block-button{
 			text-align: center;
 		}
-
-
 	</style>
 
 
@@ -114,6 +118,7 @@
 			<button id="button_copy">Скопіювати</button>
 		</div>
 	</header>
+
 	<section>
 		<div class="container"></div>
 	</section>
