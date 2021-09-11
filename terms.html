@@ -8,11 +8,18 @@
 	<style>
 		html>body{
 			background: #62D0EA;
+			transition: 0.3s;
 		}
-		
 		section{
 			background: #fff;
+			transition: 0.3s;
 		}
+
+		.dark section{
+			background: #36444A;
+			color: #fff;
+		}
+
 		.wrapper input, textarea{
 			width: 100%;
 			display: block;
@@ -46,6 +53,45 @@
 			max-width: 600px;
 			margin: 0 auto;
 		}
+		.dark .container .wp-block-button a{
+			background: rgba(255,255,255, 1);
+		}
+
+		/*Dark theme*/
+		input[type="checkbox"] {
+		  display: none;
+		}
+		label {
+			padding-left: 20px;
+			color: #F4CA16;
+			font-weight: bold;
+			font-size: 18px;
+			font-family: Arial, sans-serif;
+		}
+		label::before {
+			content: '';
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			vertical-align: middle;
+			margin-left: -10px;
+			margin-right: 10px;
+			border-radius: 25px;
+			border: 2px solid #F4CA16;
+		}
+		body.dark label{
+			color: #36444A;
+		}
+		body.dark label::before{
+			border: 2px solid #36444A;
+		}
+		input[type="checkbox"]:checked + label::before {
+			content: '';
+			background: #36444A;
+			background-size: 100%;
+			/*background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0MjYuNjY3IDQyNi42NjciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQyNi42NjcgNDI2LjY2NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxwYXRoIHN0eWxlPSJmaWxsOiM2QUMyNTk7IiBkPSJNMjEzLjMzMywwQzk1LjUxOCwwLDAsOTUuNTE0LDAsMjEzLjMzM3M5NS41MTgsMjEzLjMzMywyMTMuMzMzLDIxMy4zMzMgIGMxMTcuODI4LDAsMjEzLjMzMy05NS41MTQsMjEzLjMzMy0yMTMuMzMzUzMzMS4xNTcsMCwyMTMuMzMzLDB6IE0xNzQuMTk5LDMyMi45MThsLTkzLjkzNS05My45MzFsMzEuMzA5LTMxLjMwOWw2Mi42MjYsNjIuNjIyICBsMTQwLjg5NC0xNDAuODk4bDMxLjMwOSwzMS4zMDlMMTc0LjE5OSwzMjIuOTE4eiIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K)*/
+		}
+		/*END Dark Theme*/
 
 		/*styles for copy ↓↓↓*/
 		body,html{
@@ -117,6 +163,9 @@
 			<input class="input" type="text" placeholder="Button text">
 			<button id="button_push">Згенерувати</button>
 			<button id="button_copy">Скопіювати</button>
+			<input type="checkbox" id="dark" name="dark_theme">
+			<label for="dark">Темна Тема</label>
+
 		</div>
 	</header>
 
@@ -302,6 +351,18 @@
 			let pageHtml = document.querySelector('.container').outerHTML;
 			//console.log(pageHtml);
 			copyIt(pageHtml);
+		});
+
+		let themeCounter = 0;
+		document.querySelector('#dark').addEventListener('click', () => {
+			themeCounter++;
+			console.log('change theme');
+			if(themeCounter % 2 == 1){
+				document.querySelector('body').classList.add('dark');
+			}
+			else{
+				document.querySelector('body').classList.remove('dark');
+			}
 		});
 		
 	</script>
